@@ -1,0 +1,92 @@
+---
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloatingButton from '../components/WhatsAppFloatingButton.astro';
+import LiveActivityToast from '../components/LiveActivityToast.astro';
+import FloatingScrollTop from '../components/FloatingScrollTop.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <SEOHead title={title} description={description} canonical={canonical} />
+  </head>
+  <body class="bg-[#fbfcfa] text-[#14261f] antialiased selection:bg-[#d9aa43] selection:text-[#0c231a] relative overflow-x-clip min-h-screen flex flex-col justify-between">
+    <!-- Subtle luxury gradient background blob -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none opacity-40 z-0 overflow-hidden">
+      <div class="absolute -top-32 left-1/4 w-96 h-96 bg-brand-gold/15 rounded-full blur-3xl"></div>
+      <div class="absolute -top-40 right-1/4 w-[450px] h-[450px] bg-brand-emerald/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <Header />
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-grow">
+      <slot />
+    </main>
+
+    <!-- Floating WhatsApp CTA with live pulse -->
+    <WhatsAppFloatingButton />
+
+    <!-- Floating Scroll-to-Top Button (aparece a la mitad de la página a la derecha) -->
+    <FloatingScrollTop />
+
+    <!-- Live Verified Activity Toast Notification -->
+    <LiveActivityToast />
+
+    <!-- Footer -->
+    <Footer />
+
+    <script>
+      // Smooth dynamic zoom-reveal on scroll (Bajar y subir con zoom y transiciones lentas)
+      const setupScrollZoom = () => {
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+            } else {
+              const rect = entry.boundingClientRect;
+              // Remove when scrolled past either top or bottom
+              if (rect.top > window.innerHeight * 0.95 || rect.bottom < window.innerHeight * 0.05) {
+                entry.target.classList.remove('is-revealed');
+              }
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => {
+          // Check if already in viewport on load
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            setTimeout(() => {
+              el.classList.add('is-revealed');
+            }, 100);
+          }
+          observer.observe(el);
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupScrollZoom);
+      } else {
+        setupScrollZoom();
+      }
+    </script>
+  </body>
+</html>

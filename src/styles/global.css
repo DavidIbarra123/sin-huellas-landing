@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    color: #183A33;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  body {
+    overflow-x: clip;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  ::selection {
+    background-color: #C6E79E;
+    color: #0E2A25;
+  }
+
+  /* Prevenir zoom involuntario en iOS Safari al tocar inputs */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: inherit;
+    }
+  }
+}
+
+/* Modern Geometric Numerals (Assistantly style, clean round 0s, NO dots) */
+.num-assist {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif !important;
+  font-feature-settings: 'cv05' on, 'zero' 0;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.03em;
+}
+
+/* Assistantly-style clean flat stage with minimal shadows */
+.assist-stage {
+  background: linear-gradient(180deg, #E7EAE8 0%, #F9F9F9 50%, #FFFFFF 100%);
+}
+
+.assist-dark {
+  background: radial-gradient(900px 420px at 15% 0%, rgba(34,72,63,.85), transparent 70%), linear-gradient(160deg, #22483F 0%, #183A33 45%, #0E2A25 100%);
+}
+
+/* Assistantly clean card: crisp hairline border, flat surface, no heavy shadow */
+.assist-card {
+  background: #FFFFFF;
+  border: 1px solid #E7EAE8;
+  border-radius: 22px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.assist-card:hover {
+  border-color: #C6E79E;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -12px rgba(16, 32, 28, 0.08);
+}
+
+/* Dark card */
+.assist-card-dark {
+  background: #0E2A25;
+  border: 1px solid rgba(198, 231, 158, 0.2);
+  border-radius: 22px;
+  color: #FFFFFF;
+}
+
+/* Lime chip */
+.assist-chip {
+  background-color: #E6F3D4;
+  color: #183A33;
+  border: 1px solid rgba(24, 58, 51, 0.08);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+/* Lime pill button */
+.btn-lime {
+  background-color: #C6E79E;
+  color: #0E2A25;
+  font-weight: 700;
+  border-radius: 100px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-lime:hover {
+  background-color: #B2D988;
+  transform: translateY(-1px);
+}
+
+/* Pine pill button */
+.btn-pine {
+  background-color: #183A33;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 100px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-pine:hover {
+  background-color: #0E2A25;
+  transform: translateY(-1px);
+}
+
+/* Clean hairline */
+.assist-line {
+  height: 1px;
+  background-color: #E7EAE8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F9F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9D2CE;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #183A33;
+}
+
+/* Assistantly-style Smooth Animations & Movement */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(200%); }
+}
+
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmerSweep 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes assistFloatA {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.5deg); }
+}
+
+@keyframes assistFloatB {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(-0.5deg); }
+}
+
+.assist-float-a {
+  animation: assistFloatA 4.5s ease-in-out infinite;
+}
+
+.assist-float-b {
+  animation: assistFloatB 5s ease-in-out infinite;
+}
+
+/* Card hover lift with Assistantly smooth spring */
+.hover-lift-assist {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.hover-lift-assist:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -12px rgba(24, 58, 51, 0.12);
+}
+
+/* Scroll Zoom & Unzoom Transitions (Bajar y Subir suavemente con zoom) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px) scale(0.92);
+  filter: blur(5px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity, filter;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+/* Image Slow Zoom Reveal (Fotos que se revelan con zoom lento) */
+.scroll-zoom-box {
+  overflow: hidden;
+}
+
+.scroll-zoom-box img {
+  transform: scale(1.14);
+  transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.reveal-on-scroll.is-revealed .scroll-zoom-box img,
+.is-revealed.scroll-zoom-box img {
+  transform: scale(1);
+}
+
+/* Hero Entrance Zoom Keyframes (Zoom cinematográfico suave al entrar a la página) */
+@keyframes heroZoomIn {
+  0% {
+    opacity: 0;
+    transform: translateY(26px) scale(0.92);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.hero-zoom-title {
+  animation: heroZoomIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-zoom-desc {
+  animation: heroZoomIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+
+.hero-zoom-cta {
+  animation: heroZoomIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+.hero-zoom-badges {
+  animation: heroZoomIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+}

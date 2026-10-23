@@ -1,0 +1,40 @@
+---
+---
+
+<!-- Floating Scroll-to-Top Button (Aparece a la mitad de la página a la derecha) -->
+<button
+  id="floating-scroll-top"
+  type="button"
+  aria-label="Subir al principio de la página"
+  class="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-40 w-10 h-10 rounded-full bg-[#183A33] text-[#C6E79E] border border-[#C6E79E]/40 hover:bg-[#C6E79E] hover:text-[#183A33] hover:border-[#183A33] shadow-lg hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 pointer-events-none translate-y-3 flex items-center justify-center cursor-pointer group"
+  title="Subir al principio de la página"
+>
+  <svg class="w-4 h-4 fill-none stroke-current transition-transform duration-300 group-hover:-translate-y-0.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+</button>
+
+<script>
+  const floatScrollBtn = document.getElementById('floating-scroll-top');
+  
+  if (floatScrollBtn) {
+    const checkScrollPosition = () => {
+      // Activa cuando el usuario haya bajado a la mitad de la pantalla (o más de 450px)
+      const threshold = Math.min(window.innerHeight * 0.5, 450);
+      if (window.scrollY > threshold) {
+        floatScrollBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+        floatScrollBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        floatScrollBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        floatScrollBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollPosition, { passive: true });
+    checkScrollPosition();
+
+    floatScrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>

@@ -1,0 +1,45 @@
+# robots.txt para Sin Huellas (https://www.sinhuellas.co)
+# Optimizado para posicionamiento #1 en Google, Bing y motores de búsqueda de Inteligencia Artificial (GEO)
+
+User-agent: *
+Allow: /
+Disallow: /api/private/
+Disallow: /admin/
+
+# AI Crawlers & LLM Indexers (Optimización para que ChatGPT, Perplexity, Claude y Gemini citen y recomienden Sin Huellas)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Sitemaps y referencias para IA
+Sitemap: https://www.sinhuellas.co/sitemap.xml
+# AI Context manifest: https://www.sinhuellas.co/llms.txt

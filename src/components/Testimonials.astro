@@ -1,0 +1,423 @@
+---
+const testimonials = [
+  {
+    name: "Carlos Mendoza",
+    role: "Emprendedor Comercial",
+    city: "Bogotá, D.C.",
+    rating: 5,
+    tag: "Reportes en Datacrédito",
+    quote: "Gracias a Sin Huellas eliminé 3 reportes negativos con más de 5 años. Ningún banco me prestaba y tras el derecho de petición que radicaron, mi historial quedó limpio en 25 días. Ahora tengo crédito aprobado.",
+    time: "Hace 2 meses",
+    impact: "+280 pts Score",
+  },
+  {
+    name: "Andrea Gómez",
+    role: "Contadora Pública",
+    city: "Medellín, Antioquia",
+    rating: 5,
+    tag: "Negociación de Deuda",
+    quote: "Tenía una deuda castigada de $15M con intereses desmedidos. El equipo de Sin Huellas negoció directo y logré pagarla por $4.5M con paz y salvo formal definitivo.",
+    time: "Hace 1 mes",
+    impact: "Ahorro del 70%",
+  },
+  {
+    name: "Javier Pinzón",
+    role: "Docente Universitario",
+    city: "Cali, Valle",
+    rating: 5,
+    tag: "Desembargo de Salario",
+    quote: "Tenía un embargo sobre mi salario que vulneraba mi mínimo vital. Los abogados intervinieron ante el juzgado y en menos de 3 semanas levantaron la medida por completo.",
+    time: "Hace 3 semanas",
+    impact: "Salario Liberado",
+  },
+  {
+    name: "Marcela Restrepo",
+    role: "Comerciante Independiente",
+    city: "Barranquilla, Atlántico",
+    rating: 5,
+    tag: "Suplantación & Cifin",
+    quote: "Fui víctima de una tarjeta sacada a mi nombre. En Sin Huellas me orientaron con la denuncia penal y la reclamación ante la Superfinanciera. Me retiraron el reporte y me exoneraron del cobro.",
+    time: "Hace 4 meses",
+    impact: "Exoneración Total",
+  },
+  {
+    name: "Fernando Castro",
+    role: "Ingeniero de Sistemas",
+    city: "Bucaramanga, Santander",
+    rating: 5,
+    tag: "Crédito Hipotecario Aprobado",
+    quote: "Llevaba 6 años sin poder postularme a subsidio de vivienda. Sin Huellas radicó la caducidad por Ley 2157 y mi Datacrédito quedó completamente limpio. Ya me desembolsaron el crédito.",
+    time: "Hace 1 mes",
+    impact: "Casa Propia Lograda",
+  },
+  {
+    name: "Patricia Londoño",
+    role: "Enfermera Jefe",
+    city: "Pereira, Risaralda",
+    rating: 5,
+    tag: "Cobro Injusto Telefonía",
+    quote: "Una empresa de telefonía me mantenía castigada por un cobro inexistente. Los abogados demostraron que no hubo comunicación previa legal y borraron el dato en 20 días hábiles.",
+    time: "Hace 2 semanas",
+    impact: "Paz y Salvo 100%",
+  },
+  {
+    name: "Diego Beltrán",
+    role: "Transportador",
+    city: "Cartagena, Bolívar",
+    rating: 5,
+    tag: "Desembargo de Cuentas",
+    quote: "Me congelaron la cuenta de ahorros donde recibo mis ingresos. El equipo jurídico radicó tutela por inembargabilidad del mínimo vital y el banco me devolvió los fondos en 8 días.",
+    time: "Hace 3 semanas",
+    impact: "Cuentas Desbloqueadas",
+  },
+  {
+    name: "Carolina Rojas",
+    role: "Administradora",
+    city: "Manizales, Caldas",
+    rating: 5,
+    tag: "Acuerdo Bancario sin Quiebra",
+    quote: "Debía más de $22 millones acumulados. Gracias a la mediación jurídica pagué una suma única de $6.8 millones y recibí el paz y salvo formal sin letras chiquitas.",
+    time: "Hace 2 meses",
+    impact: "Ahorro de $15.2M",
+  },
+];
+
+// Duplicate for continuous seamless marquee loop
+const marqueeTestimonials = [...testimonials, ...testimonials];
+---
+
+<section id="testimonios" class="py-20 md:py-28 bg-[#F9F9F9] relative overflow-hidden border-t border-b border-[#E7EAE8]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header (Assistantly Style) -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10201C] tracking-tight mb-4">
+        La tranquilidad de recuperar tu <br class="hidden sm:inline"/>
+        <span class="text-[#183A33] underline decoration-[#C6E79E] decoration-4 underline-offset-4">
+          libertad crediticia
+        </span>
+      </h2>
+      <p class="text-base sm:text-lg text-[#333333]/80 leading-relaxed font-normal">
+        Miles de colombianos y familias ya superaron sus reportes y deudas con el acompañamiento jurídico legal y transparente de <strong>Sin Huellas</strong>.
+      </p>
+    </div>
+
+    <!-- Spotlight Cards Grid: Real Images with Motion & Assistantly Aesthetics -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      
+      <!-- Card 1: Smiling Relieved Woman (Client Victory with Zoom Scroll & Hover Zoom) -->
+      <div class="reveal-on-scroll bg-white rounded-2xl border border-[#E7EAE8] overflow-hidden group hover:border-[#183A33]/50 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between shadow-sm cursor-pointer">
+        <div class="scroll-zoom-box relative overflow-hidden aspect-[16/10] bg-[#183A33]/5">
+          <img 
+            src="/client-victory.jpg" 
+            alt="Celular con la certificación de Sin Huellas y paz y salvo legal" 
+            class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
+            loading="lazy"
+          />
+          
+          <!-- Top Floating Tag (Sin mención de ciudad, alcance nacional) -->
+          <div class="absolute top-4 left-4 z-10">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#E6F3D4] text-[#183A33] shadow-sm backdrop-blur-md">
+              ✓ Caso Ganado
+            </span>
+          </div>
+        </div>
+
+        <!-- Card Content Details -->
+        <div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <div class="flex text-[#183A33] text-sm">★★★★★</div>
+              <span class="text-xs font-bold text-[#183A33]/70">· Caso Verificado en Datacrédito</span>
+            </div>
+            <blockquote class="text-sm sm:text-base text-[#10201C] font-normal leading-relaxed italic mb-4">
+              "Tenía 3 reportes que llevaban más de 4 años bloqueando mis solicitudes de crédito de vivienda. Los abogados de Sin Huellas radicaron el derecho de petición bajo la Ley 2157 y en 21 días me entregaron mi certificación de retiro total de la central de riesgo."
+            </blockquote>
+          </div>
+
+          <div class="pt-4 border-t border-[#E7EAE8] flex items-center justify-between">
+            <div>
+              <span class="block text-sm font-bold text-[#10201C]">Valeria Salazar R.</span>
+              <span class="text-xs text-[#333333]/70">Arquitecta Independiente · Cliente de Sin Huellas</span>
+            </div>
+            <span class="num-assist text-xs font-bold text-[#183A33] bg-[#E6F3D4] px-2.5 py-1 rounded-full">
+              Ley 2157
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Legal Handshake & Absolute Trust (with Zoom Scroll & Hover Zoom) -->
+      <div class="reveal-on-scroll bg-white rounded-2xl border border-[#E7EAE8] overflow-hidden group hover:border-[#183A33]/50 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between shadow-sm cursor-pointer" style="transition-delay: 150ms;">
+        <div class="scroll-zoom-box relative overflow-hidden aspect-[16/10] bg-[#183A33]/5">
+          <img 
+            src="/trust-handshake.jpg" 
+            alt="Acuerdo legal y apretón de manos de confianza mutua en la firma Sin Huellas" 
+            class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
+            loading="lazy"
+          />
+
+          <!-- Gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#10201C]/80 via-transparent to-transparent"></div>
+
+          <!-- Top Floating Tag -->
+          <div class="absolute top-4 left-4 z-10">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#183A33] text-[#C6E79E] shadow-sm backdrop-blur-md">
+              ✦ Alianza & Respaldo Jurídico
+            </span>
+          </div>
+
+          <!-- Bottom live counter inside photo -->
+          <div class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white">
+            <div class="flex flex-col">
+              <span class="text-xs text-[#C6E79E] font-medium uppercase tracking-wider">Compromiso Sin Huellas</span>
+              <span class="text-base sm:text-lg font-bold">Representación Ética & 100% Legal</span>
+            </div>
+            <div class="px-3.5 py-1.5 rounded-xl bg-white/20 border border-white/30 text-right backdrop-blur-sm shadow-sm">
+              <span class="text-[10px] block text-white/80">Efectividad</span>
+              <span class="num-assist text-sm font-extrabold text-white">94.8% Éxito</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Content Details -->
+        <div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-[#183A33]"></span>
+              <span class="text-xs font-bold text-[#183A33] uppercase tracking-wider">Seguridad Jurídica Garantizada</span>
+            </div>
+            <p class="text-sm sm:text-base text-[#10201C] font-normal leading-relaxed mb-4">
+              En <strong>Sin Huellas</strong> no existen promesas vacías ni métodos fraudulentos. Cada acción de tutela, derecho de petición o negociación de cartera se fundamenta estrictamente en la Constitución y las leyes colombianas, con abogados titulados defendiendo tus derechos.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E7EAE8] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-[#10201C]">+12.800 Casos Gestionados</span>
+              <span class="text-xs text-[#333333]/50">|</span>
+              <span class="text-xs text-[#333333]/70">Atención Jurídica a Nivel Nacional</span>
+            </div>
+            <a 
+              href="#contacto" 
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-[#183A33] hover:text-[#0E2A25] group-hover:underline"
+            >
+              <span>Consultar caso</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Continuous Marquee Testimonials: Moving right-to-left with positive trust reviews -->
+    <div class="relative w-full overflow-hidden py-4 marquee-wrapper">
+      
+      <!-- Left & Right Soft Fade Masks -->
+      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#F9F9F9] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#F9F9F9] to-transparent z-10"></div>
+
+      <!-- Infinite Moving Track (Right to Left) -->
+      <div class="marquee-track flex gap-4 sm:gap-6 items-stretch">
+        {marqueeTestimonials.map((t, idx) => (
+          <div 
+            class="marquee-card w-[290px] sm:w-[350px] md:w-[370px] shrink-0 bg-white rounded-2xl p-5 sm:p-6 border border-[#E7EAE8] flex flex-col justify-between transition-all duration-300 shadow-sm hover:border-[#183A33] hover:shadow-xl hover:scale-[1.02] active:scale-98 cursor-pointer"
+          >
+            <div>
+              <!-- Header of card -->
+              <div class="flex items-center justify-between mb-3.5">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#E6F3D4] text-[#183A33] border border-[#C6E79E]/40">
+                  {t.tag}
+                </span>
+                <div class="flex text-[#183A33] text-xs tracking-wider">
+                  {'★'.repeat(t.rating)}
+                </div>
+              </div>
+
+              <!-- Quote -->
+              <p class="text-xs sm:text-sm text-[#333333] leading-relaxed italic mb-5 font-normal">
+                "{t.quote}"
+              </p>
+            </div>
+
+            <!-- Author info & Impact -->
+            <div class="pt-4 border-t border-[#E7EAE8]">
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="text-[11px] font-bold text-[#183A33] bg-[#F9F9F9] border border-[#E7EAE8] px-2.5 py-0.5 rounded-md">
+                  {t.impact}
+                </span>
+                <span class="text-[10px] text-[#333333]/60">{t.time}</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-[#183A33] text-[#C6E79E] font-bold text-xs flex items-center justify-center flex-shrink-0">
+                  {t.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="text-xs font-bold text-[#10201C] truncate">{t.name}</span>
+                  <span class="text-[11px] text-[#333333]/70 truncate">{t.city}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- Bottom Metric Banner Assistantly Deep Pine Style (Movimiento de arriba a abajo, Zoom y Contadores de 0) -->
+    <div 
+      id="metric-banner"
+      class="metric-banner-box mt-14 bg-[#183A33] rounded-2xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-around gap-8 text-center border border-[#183A33] cursor-pointer"
+    >
+      <div class="group cursor-default transition-transform duration-300 hover:scale-105">
+        <span id="metric-counter-cases" class="num-assist block text-3xl sm:text-4xl font-extrabold text-[#C6E79E] tracking-tight transition-transform duration-300 group-hover:scale-110">
+          +12.800
+        </span>
+        <span class="text-xs sm:text-sm text-white/80 mt-1 block font-medium">Casos y consultas en Colombia</span>
+      </div>
+      
+      <div class="hidden md:block w-px h-12 bg-white/15"></div>
+      
+      <div class="group cursor-default transition-transform duration-300 hover:scale-105">
+        <span id="metric-counter-rate" class="num-assist block text-3xl sm:text-4xl font-extrabold text-[#C6E79E] tracking-tight transition-transform duration-300 group-hover:scale-110">
+          94.8%
+        </span>
+        <span class="text-xs sm:text-sm text-white/80 mt-1 block font-medium">Tasa de viabilidad y resolución</span>
+      </div>
+      
+      <div class="hidden md:block w-px h-12 bg-white/15"></div>
+      
+      <div class="group cursor-default transition-transform duration-300 hover:scale-105">
+        <span id="metric-counter-legal" class="num-assist block text-3xl sm:text-4xl font-extrabold text-[#C6E79E] tracking-tight transition-transform duration-300 group-hover:scale-110">
+          100% Legal
+        </span>
+        <span class="text-xs sm:text-sm text-white/80 mt-1 block font-medium">Leyes 1266 y 2157 de Habeas Data</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Continuous Smooth Marquee from Right to Left (de derecha a izquierda) */
+  @keyframes marqueeLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-wrapper {
+    touch-action: pan-y;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: marqueeLeft 42s linear infinite;
+  }
+
+  /* Pause on hover so users can easily read each testimonial */
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 640px) {
+    .marquee-track {
+      animation-duration: 32s;
+    }
+  }
+
+  /* Banner Entrance Motion: de arriba a abajo con zoom in suave */
+  .metric-banner-box {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.94);
+    transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px -2px rgba(24, 58, 51, 0.1);
+  }
+
+  .metric-banner-box.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Hover Zoom hacia afuera activo */
+  .metric-banner-box.is-active:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 25px 50px -12px rgba(24, 58, 51, 0.45);
+    border-color: rgba(198, 231, 158, 0.4);
+  }
+</style>
+
+<script>
+  // Dynamic Metric Rolling Numbers (0 subiendo rápido al llegar)
+  const metricBanner = document.getElementById('metric-banner');
+  const countCases = document.getElementById('metric-counter-cases');
+  const countRate = document.getElementById('metric-counter-rate');
+  const countLegal = document.getElementById('metric-counter-legal');
+
+  let hasAnimatedMetrics = false;
+
+  const animateMetrics = () => {
+    if (hasAnimatedMetrics) return;
+    hasAnimatedMetrics = true;
+
+    const duration = 1800; // 1.8 segundos
+    const startTime = performance.now();
+
+    const updateCounters = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      // 1. Casos (0 -> 12800)
+      const currentCases = Math.floor(ease * 12800);
+      if (countCases) {
+        countCases.textContent = '+' + currentCases.toLocaleString('es-CO');
+      }
+
+      // 2. Tasa (0 -> 94.8)
+      const currentRate = (ease * 94.8).toFixed(1);
+      if (countRate) {
+        countRate.textContent = currentRate + '%';
+      }
+
+      // 3. Legal (0 -> 100%)
+      const currentLegal = Math.floor(ease * 100);
+      if (countLegal) {
+        countLegal.textContent = currentLegal + '% Legal';
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounters);
+      } else {
+        if (countCases) countCases.textContent = '+12.800';
+        if (countRate) countRate.textContent = '94.8%';
+        if (countLegal) countLegal.textContent = '100% Legal';
+      }
+    };
+
+    requestAnimationFrame(updateCounters);
+  };
+
+  if (metricBanner) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          metricBanner.classList.add('is-active');
+          animateMetrics();
+        }
+      });
+    }, { threshold: 0.15 });
+
+    observer.observe(metricBanner);
+  }
+</script>

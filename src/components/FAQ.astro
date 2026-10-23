@@ -1,0 +1,190 @@
+---
+const faqs = [
+  {
+    q: "¿Cómo funciona la eliminación legal de reportes con Sin Huellas?",
+    a: "En Sin Huellas no realizamos 'trucos mágicos' ni hackeos ilegales. Aplicamos estrictamente la Constitución Nacional y las Leyes 1266 de 2008 y 2157 de 2021. Si una entidad financiera o de telecomunicaciones no te notificó por escrito 20 días antes de reportarte, si el dato caducó por haber superado los 8 años de mora máxima, o si la obligación fue cancelada y se superó el periodo legal de permanencia (máximo 4 años), nuestros abogados radican derechos de petición formales y tutelas para exigir el borrado inmediato y definitivo del reporte ante Datacrédito y TransUnion.",
+  },
+  {
+    q: "¿Cuánto tiempo permanece un reporte negativo en Colombia si ya pagué?",
+    a: "De acuerdo con el Artículo 13 de la Ley 1266 de 2008 y la Ley 2157 de 2021 (Borrón y Cuenta Nueva), si cancelas la obligación en mora, el reporte negativo permanecerá en las centrales de riesgo por el doble del tiempo que duró la mora, pero con un límite máximo insuperable de 4 años contados desde la fecha del pago y paz y salvo.",
+  },
+  {
+    q: "¿Qué pasa si nunca pagué la deuda? ¿El reporte es para siempre?",
+    a: "No. En Colombia ningún reporte puede ser perpetuo. La Corte Constitucional mediante la Sentencia C-282/21 y la Ley de Habeas Data establecieron que el término máximo absoluto de caducidad para un dato financiero negativo es de ocho (8) años contados a partir del momento en que se configuró la mora. Superados los 8 años, el reporte DEBE eliminarse obligatoriamente de Datacrédito y CIFIN, independientemente de que la deuda se haya cancelado o no.",
+  },
+  {
+    q: "¿Qué es el requisito de comunicación previa de 20 días?",
+    a: "El Artículo 12 de la Ley 1266 obliga a cualquier entidad acreedora a enviar una comunicación física o electrónica al deudor con al menos 20 días calendario de anticipación antes de efectuar el reporte negativo, para permitirle pagar o controvertir la obligación. Si la entidad omitió este requisito o no tiene prueba fehaciente de la entrega de la notificación, el reporte es completamente ilegal y debe ser eliminado por violación al debido proceso.",
+  },
+  {
+    q: "¿Cómo puede Sin Huellas detener un embargo de salario o cuenta de ahorros?",
+    a: "Analizamos de inmediato el estado del expediente en la Rama Judicial. La ley colombiana prohíbe el embargo de salarios mínimos legales (salvo por alimentos o cooperativas) y establece límites claros de inembargabilidad en cuentas de ahorros. Nuestro equipo interpone incidentes de levantamiento de medidas cautelares, alegando la protección del mínimo vital o la prescripción de los títulos ejecutivos (pagarés o cheques).",
+  },
+  {
+    q: "¿Cuánto tarda el trámite y cómo recibo respuesta?",
+    a: "Los derechos de petición formulados por Sin Huellas tienen un término legal de respuesta de 15 días hábiles según el Código de Procedimiento Administrativo. Durante todo el proceso cuentas con asesoría continua, panel de seguimiento y recibirás la copia del radicado y la respuesta oficial de la central de riesgo.",
+  },
+];
+---
+
+<section id="faq" class="py-20 md:py-28 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10201C] tracking-tight mb-4">
+        Preguntas <span class="text-[#183A33] underline decoration-[#C6E79E] decoration-4 underline-offset-4">frecuentes</span>
+      </h2>
+      <p class="text-base sm:text-lg text-[#333333]/80 font-normal">
+        Resolvemos todas tus dudas sobre Datacrédito, TransUnion, embargos y la legislación crediticia colombiana.
+      </p>
+    </div>
+
+    <!-- Accordion Container -->
+    <div class="space-y-4">
+      {faqs.map((faq, idx) => (
+        <div class="faq-card rounded-2xl border border-[#E7EAE8] bg-white overflow-hidden reveal-on-scroll shadow-sm cursor-pointer">
+          <button
+            type="button"
+            class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-[#10201C] hover:text-[#183A33] transition-colors cursor-pointer"
+            aria-expanded="false"
+          >
+            <span class="text-base sm:text-lg leading-snug">{faq.q}</span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-[#E6F3D4] text-[#183A33] flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold">
+              +
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-[#333333] leading-relaxed font-normal border-t border-[#E7EAE8] pt-4">
+            <p>{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Extra CTA Assistantly style with Cinematic Zoom -->
+    <div class="faq-cta-card mt-12 text-center p-8 sm:p-10 rounded-3xl bg-white border border-[#E7EAE8] shadow-sm hover:border-[#183A33]/40 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl transition-all duration-400 ease-out cursor-pointer reveal-on-scroll">
+      <h3 class="text-xl sm:text-2xl font-bold text-[#10201C] mb-2">¿Tienes una duda particular que no ves aquí?</h3>
+      <p class="text-xs sm:text-sm text-[#333333]/80 mb-6 max-w-xl mx-auto">Nuestros abogados analizan tu cédula y caso sin costo en una llamada de 15 minutos.</p>
+      <a
+        href="https://wa.me/573005734474?text=Hola%20Sin%20Huellas,%20tengo%20una%20pregunta%20sobre%20mi%20caso"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full text-sm sm:text-base font-bold bg-[#183A33] text-[#C6E79E] border-2 border-[#183A33] hover:border-[#C6E79E] hover:bg-[#0E2A25] shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+      >
+        <span class="tracking-wide">Hablar con un Abogado por WhatsApp</span>
+        <svg class="w-4 h-4 fill-none stroke-current transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* FAQ Interactive Card Zoom: Hover y Estado Abierto / Seleccionado */
+  .faq-card {
+    position: relative;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.25s ease, 
+                background-color 0.25s ease;
+    transform-origin: center center;
+  }
+
+  .faq-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 28px -6px rgba(24, 58, 51, 0.12);
+    border-color: rgba(24, 58, 51, 0.35);
+  }
+
+  /* Estado Abierto con Zoom Más Grande y Cinematográfico */
+  .faq-card.is-selected {
+    transform: translateY(-8px) scale(1.075);
+    box-shadow: 0 32px 64px -14px rgba(24, 58, 51, 0.3);
+    border-color: #183A33;
+    background-color: #FFFFFF;
+    outline: 3px solid #C6E79E;
+    z-index: 30;
+  }
+
+  @media (max-width: 640px) {
+    .faq-card.is-selected {
+      transform: translateY(-5px) scale(1.045);
+      box-shadow: 0 20px 40px -10px rgba(24, 58, 51, 0.22);
+      outline: 2.5px solid #C6E79E;
+    }
+    .faq-card.is-selected:hover {
+      transform: translateY(-5px) scale(1.045);
+    }
+  }
+
+  .faq-card.is-selected:hover {
+    transform: translateY(-8px) scale(1.08);
+  }
+
+  .faq-card.is-selected .faq-icon {
+    background-color: #183A33;
+    color: #C6E79E;
+    transform: rotate(180deg) scale(1.1);
+  }
+
+  .faq-card.is-selected .faq-content {
+    animation: faqFadeZoom 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes faqFadeZoom {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-card').forEach(card => {
+    const btn = card.querySelector('.faq-btn');
+    if (!btn) return;
+
+    card.addEventListener('click', (e) => {
+      // Si el usuario está seleccionando texto dentro de la respuesta, no cerrar
+      const content = card.querySelector('.faq-content');
+      if (content && content.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+        return;
+      }
+
+      const icon = btn.querySelector('.faq-icon');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Cerrar otros acordeones
+      document.querySelectorAll('.faq-card').forEach(otherCard => {
+        if (otherCard !== card) {
+          otherCard.classList.remove('is-selected');
+          const otherBtn = otherCard.querySelector('.faq-btn');
+          if (otherBtn) {
+            otherBtn.setAttribute('aria-expanded', 'false');
+            otherBtn.nextElementSibling?.classList.add('hidden');
+            const otherIcon = otherBtn.querySelector('.faq-icon');
+            if (otherIcon) otherIcon.textContent = '+';
+          }
+        }
+      });
+
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        content?.classList.add('hidden');
+        card.classList.remove('is-selected');
+        if (icon) icon.textContent = '+';
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        content?.classList.remove('hidden');
+        card.classList.add('is-selected');
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
+</script>

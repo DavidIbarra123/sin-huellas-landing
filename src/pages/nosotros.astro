@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import WhySinHuellas from '../components/WhySinHuellas.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<BaseLayout
+  title="Sobre Nosotros | Sin Huellas Colombia - Firma Jurídica"
+  description="Conoce al equipo de Sin Huellas: expertos en derecho del consumidor financiero, Habeas Data y recuperación crediticia en Colombia con sede en Bogotá."
+  canonical="https://www.sinhuellas.co/nosotros"
+>
+  <div class="pt-16 pb-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-emerald-soft border border-brand-emerald/15 mb-4">
+        <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+        <span class="text-xs font-bold text-brand-emerald uppercase tracking-wider">Nuestra Misión y Respaldo</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-emerald-deep tracking-tight mb-6">
+        Defendemos tu derecho a un <br />
+        <span class="font-editorial italic font-normal text-brand-gold text-5xl sm:text-6xl">historial financiero limpio</span>
+      </h1>
+      <p class="text-base sm:text-lg text-emerald-950/75 leading-relaxed">
+        <strong>Sin Huellas</strong> nació con el firme propósito de democratizar el acceso a la defensa jurídica crediticia en Colombia. Millones de ciudadanos son reportados injustamente o permanecen con castigos financieros más allá del tiempo legal. Nuestro equipo de abogados y especialistas en tecnología financiera trabaja para devolverte tu libertad económica.
+      </p>
+    </div>
+
+    <!-- Values Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="glass-card rounded-3xl p-8 bg-white border border-emerald-900/10">
+        <div class="w-12 h-12 rounded-2xl bg-brand-emerald text-brand-gold flex items-center justify-center mb-6 font-bold text-lg">
+          ⚖️
+        </div>
+        <h3 class="text-xl font-extrabold text-brand-emerald-deep mb-2">100% Legalidad</h3>
+        <p class="text-xs sm:text-sm text-emerald-950/70 leading-relaxed">
+          Operamos rigurosamente bajo la Constitución y la Ley de Habeas Data (Leyes 1266 de 2008 y 2157 de 2021). Cero atajos, cero riesgos.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 bg-white border border-emerald-900/10">
+        <div class="w-12 h-12 rounded-2xl bg-brand-emerald text-brand-gold flex items-center justify-center mb-6 font-bold text-lg">
+          🔍
+        </div>
+        <h3 class="text-xl font-extrabold text-brand-emerald-deep mb-2">Auditoría 360°</h3>
+        <p class="text-xs sm:text-sm text-emerald-950/70 leading-relaxed">
+          No nos limitamos a Datacrédito; cotejamos TransUnion, Rama Judicial, Garantías Mobiliarias y SIMIT para un diagnóstico certero.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 bg-white border border-emerald-900/10">
+        <div class="w-12 h-12 rounded-2xl bg-brand-emerald text-brand-gold flex items-center justify-center mb-6 font-bold text-lg">
+          🤝
+        </div>
+        <h3 class="text-xl font-extrabold text-brand-emerald-deep mb-2">Acompañamiento Humano</h3>
+        <p class="text-xs sm:text-sm text-emerald-950/70 leading-relaxed">
+          Trato cercano y empático. Entendemos el estrés que causan las deudas y los embargos, y estamos a tu lado en cada radicado.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ProcessSteps />
+  <WhySinHuellas />
+  <Testimonials />
+  <ContactSection />
+</BaseLayout>

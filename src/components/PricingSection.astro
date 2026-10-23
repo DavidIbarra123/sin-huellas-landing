@@ -1,0 +1,167 @@
+---
+const plans = [
+  {
+    name: "Llamada Preliminar de Asesor",
+    badge: "100% Gratuito",
+    price: "$ 0",
+    currency: "COP",
+    duration: "15 min",
+    popular: false,
+    desc: "Examen inicial de viabilidad jurídica sin costo ni compromiso alguno.",
+    features: [
+      "Explicación técnica del proceso procesal paso a paso",
+      "Resolución de tus inquietudes iniciales de fondo",
+      "Evaluación preliminar de viabilidad en Habeas Data",
+      "Atención directa vía telefónica o WhatsApp institucional",
+      "Plena libertad para decidir encomendar el caso",
+    ],
+    ctaText: "Solicitar Llamada Sin Costo",
+    ctaLink: "https://wa.me/573005734474?text=Hola%20Sin%20Huellas,%20solicito%20mi%20Llamada%20de%20Orientaci%C3%B3n%20Preliminar%20Gratuita",
+  },
+  {
+    name: "Consultoría Completa + Dictamen Jurídico",
+    badge: "Más Solicitado",
+    price: "$ 150.000",
+    currency: "COP",
+    duration: "60 min",
+    popular: true,
+    desc: "Auditoría exhaustiva en 5 fuentes con informe legal por escrito y hoja de ruta formal.",
+    features: [
+      "Auditoría técnica en Datacrédito (Experian)",
+      "Auditoría técnica en TransUnion (CIFIN)",
+      "Cotejo de procesos civiles ejecutivos en Rama Judicial",
+      "Inspección en Registro de Garantías Mobiliarias",
+      "Revisión en SIMIT (tránsito y multas)",
+      "Dictamen jurídico por escrito con hoja de ruta procesal",
+      "60 minutos de audiencia privada con abogado titular",
+      "Transacción 100% blindada vía PSE con tu banco",
+    ],
+    ctaText: "Agendar Consultoría ($150.000)",
+    ctaLink: "#agendar",
+  },
+  {
+    name: "Representación Procesal & Negociación",
+    badge: "Patrocinio Integral",
+    price: "A Medida",
+    currency: "Cotización",
+    duration: "Hasta la Resolución",
+    popular: false,
+    desc: "Patrocinio legal para retiro de reportes, liquidación de deudas o levantamiento de embargos.",
+    features: [
+      "Redacción y radicación formal de Derechos de Petición",
+      "Interposición de Acciones de Tutela ante juzgados",
+      "Negociación directa de deudas con quitas de hasta 70%",
+      "Incidente de desembargo sobre salarios y cuentas bancarias",
+      "Seguimiento perentorio de términos procesales",
+      "Garantía de estricto cumplimiento constitucional",
+    ],
+    ctaText: "Cotizar Patrocinio Legal",
+    ctaLink: "https://wa.me/573005734474?text=Hola%20Sin%20Huellas,%20solicito%20cotizar%20la%20representaci%C3%B3n%20jur%C3%ADdica%20de%20mi%20asunto",
+  },
+];
+---
+
+<section id="precios" class="py-20 md:py-28 relative bg-[#F9F9F9] border-b border-[#E7EAE8]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14 reveal-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10201C] tracking-tight mb-4">
+        Planes a la medida de tu <br class="hidden sm:inline"/>
+        <span class="text-[#183A33] underline decoration-[#C6E79E] decoration-4 underline-offset-4">
+          tranquilidad financiera
+        </span>
+      </h2>
+      <p class="text-base text-[#333333] font-normal">
+        Elige la opción que mejor se adapte a tu necesidad actual y comienza hoy mismo el camino hacia tu paz económica.
+      </p>
+    </div>
+
+    <!-- Pricing Cards Grid (Interactive Playing Card Zoom & Elevation on Hover) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch relative py-4">
+      {plans.map((p, idx) => (
+        <div 
+          class={`reveal-on-scroll group rounded-2xl p-7 sm:p-8 relative flex flex-col justify-between transition-all duration-300 ease-out border cursor-pointer ${
+            p.popular 
+              ? 'bg-[#183A33] text-white border-[#22483F] shadow-md lg:-translate-y-2 hover:scale-[1.08] hover:-translate-y-5 hover:shadow-2xl hover:ring-4 hover:ring-[#C6E79E]/60 hover:border-[#C6E79E] z-10 hover:z-20' 
+              : 'bg-white text-[#183A33] border-[#E7EAE8] shadow-sm hover:scale-[1.06] hover:-translate-y-4 hover:shadow-2xl hover:border-[#183A33] hover:z-20'
+          }`}
+          style={`transition-delay: ${idx * 100}ms;`}
+        >
+          
+          {p.popular && (
+            <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[#C6E79E] text-[#0E2A25] font-bold text-[10px] uppercase num-assist tracking-wider">
+              {p.badge}
+            </div>
+          )}
+
+          <div>
+            {!p.popular && (
+              <span class="inline-block px-3 py-0.5 rounded-full text-[10px] num-assist font-bold bg-[#E6F3D4] text-[#183A33] mb-4">
+                {p.badge}
+              </span>
+            )}
+
+            <h3 class={`text-xl font-bold mb-2 ${p.popular ? 'text-white' : 'text-[#10201C]'}`}>
+              {p.name}
+            </h3>
+            
+            <p class={`text-xs mb-5 ${p.popular ? 'text-white/75' : 'text-[#333333]'}`}>
+              {p.desc}
+            </p>
+
+            <!-- Price (Modern Geometric Num-Assist) -->
+            <div class={`flex items-baseline gap-2 mb-5 pb-5 border-b ${p.popular ? 'border-white/15' : 'border-[#E7EAE8]'}`}>
+              <span class={`num-assist text-3xl sm:text-4xl font-extrabold tracking-tight ${p.popular ? 'text-[#C6E79E]' : 'text-[#183A33]'}`}>
+                {p.price}
+              </span>
+              <div class="flex flex-col text-xs font-semibold">
+                <span class={p.popular ? 'text-white/70' : 'text-[#333333]/60'}>{p.currency}</span>
+                <span class={p.popular ? 'text-[#C6E79E]' : 'text-[#183A33]'}>/ {p.duration}</span>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <ul class="space-y-2.5 mb-7">
+              {p.features.map(f => (
+                <li class="flex items-start gap-2.5 text-xs">
+                  <span class={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[9px] font-bold ${
+                    p.popular ? 'bg-[#C6E79E] text-[#0E2A25]' : 'bg-[#E6F3D4] text-[#183A33]'
+                  }`}>
+                    ✓
+                  </span>
+                  <span class={p.popular ? 'text-white/90' : 'text-[#333333]'}>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- CTA Button (Lime for popular, pine for normal) -->
+          <div>
+            <a
+              href={p.ctaLink}
+              class={`w-full py-3 px-5 rounded-full font-bold text-center text-xs tracking-wide inline-flex items-center justify-center gap-2 transition-all duration-200 ${
+                p.popular
+                  ? 'bg-[#C6E79E] text-[#0E2A25] hover:bg-[#B2D988]'
+                  : 'bg-[#183A33] text-white hover:bg-[#0E2A25]'
+              }`}
+            >
+              <span>{p.ctaText}</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            
+            {p.popular && (
+              <p class="text-center text-[10px] text-[#C6E79E] mt-2.5 flex items-center justify-center gap-1 num-assist font-medium">
+                <span>✦ Pagos seguros vía PSE · Todos los bancos</span>
+              </p>
+            )}
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

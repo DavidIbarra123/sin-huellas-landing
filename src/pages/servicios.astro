@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BentoServices from '../components/BentoServices.astro';
+import PricingSection from '../components/PricingSection.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<BaseLayout
+  title="Servicios Legales y Financieros | Sin Huellas Colombia"
+  description="Conoce los servicios jurídicos de Sin Huellas: eliminación de reportes en Datacrédito y TransUnion, negociación de deudas con descuento y defensa contra embargos en Colombia."
+  canonical="https://www.sinhuellas.co/servicios"
+>
+  <div class="pt-12 pb-6 text-center max-w-4xl mx-auto px-4">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-emerald-soft border border-brand-emerald/15 mb-4">
+      <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+      <span class="text-xs font-bold text-brand-emerald uppercase tracking-wider">Catálogo Jurídico Especializado</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-emerald-deep tracking-tight mb-4">
+      Servicios de <span class="font-editorial italic font-normal text-brand-gold text-5xl sm:text-6xl">recuperación crediticia</span>
+    </h1>
+    <p class="text-base sm:text-lg text-emerald-950/70 max-w-2xl mx-auto">
+      Abogados especialistas en derecho financiero y del consumidor. Protegemos tu patrimonio y te devolvemos la posibilidad de acceder a créditos en Colombia.
+    </p>
+  </div>
+
+  <BentoServices />
+  <PricingSection />
+  <FAQ />
+  <ContactSection />
+</BaseLayout>

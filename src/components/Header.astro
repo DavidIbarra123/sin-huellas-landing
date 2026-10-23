@@ -1,0 +1,464 @@
+---
+---
+
+<header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full transition-all duration-300">
+  <div class="bg-white/95 backdrop-blur-md rounded-full px-5 py-2.5 flex items-center justify-between border border-[#E7EAE8] shadow-sm">
+    
+    <!-- Brand Logo -->
+    <a href="/" class="flex items-center gap-2 group" aria-label="Sin Huellas Inicio">
+      <img
+        src="/logo-sin-huellas.png"
+        alt="Sin Huellas - Nuevas Oportunidades"
+        class="h-8 sm:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+      />
+    </a>
+
+    <!-- Desktop Navigation Links (Assistantly Style) -->
+    <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-semibold text-[#183A33]/90">
+      <a href="/#servicios" class="px-3 py-1.5 rounded-full hover:bg-[#F1F7E8] hover:text-[#183A33] transition-colors">Servicios</a>
+      <a href="/#confianza" class="px-3 py-1.5 rounded-full bg-[#E6F3D4] text-[#183A33] font-bold transition-colors">¿Por qué confiar?</a>
+      <a href="/#proceso" class="px-3 py-1.5 rounded-full hover:bg-[#F1F7E8] hover:text-[#183A33] transition-colors">Metodología</a>
+      <a href="/#simulador" class="px-3 py-1.5 rounded-full hover:bg-[#F1F7E8] hover:text-[#183A33] transition-colors flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#C6E79E]"></span>
+        Simulador
+      </a>
+      <a href="/#precios" class="px-3 py-1.5 rounded-full hover:bg-[#F1F7E8] hover:text-[#183A33] transition-colors">Tarifas</a>
+      <a href="/#testimonios" class="px-3 py-1.5 rounded-full hover:bg-[#F1F7E8] hover:text-[#183A33] transition-colors">Casos de Éxito</a>
+      <a href="/#faq" class="px-3 py-1.5 rounded-full hover:bg-[#F1F7E8] hover:text-[#183A33] transition-colors">Consultas</a>
+    </nav>
+
+    <!-- Action Buttons: Iniciar Sesión & Registrarse -->
+    <div class="flex items-center gap-1.5 sm:gap-2.5">
+      
+      <!-- Iniciar Sesión -->
+      <button
+        type="button"
+        class="auth-trigger-login inline-flex items-center justify-center px-3 sm:px-3.5 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-[#183A33] hover:bg-[#F1F7E8] border border-[#E7EAE8] hover:border-[#183A33]/40 transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+      >
+        Iniciar Sesión
+      </button>
+
+      <!-- Registrarse -->
+      <button
+        type="button"
+        class="auth-trigger-register inline-flex items-center justify-center px-3 sm:px-4 py-1.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-[#183A33] text-[#C6E79E] border border-[#183A33] hover:bg-[#0E2A25] hover:border-[#C6E79E] transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
+      >
+        Registrarse
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="lg:hidden p-1.5 sm:p-2 rounded-full text-[#183A33] hover:bg-[#F1F7E8] active:scale-95 transition-all"
+        aria-label="Abrir menú"
+      >
+        <svg id="menu-icon" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="close-icon" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden mt-2 p-4 rounded-2xl bg-white border border-[#E7EAE8] shadow-xl">
+    <div class="flex flex-col gap-1.5 font-medium text-xs text-[#183A33]">
+      <a href="/#servicios" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-[#F1F7E8] active:scale-98 transition-all">Servicios Jurídicos</a>
+      <a href="/#confianza" class="mobile-link px-4 py-2.5 rounded-xl bg-[#E6F3D4] font-bold active:scale-98 transition-all">¿Por qué confiar?</a>
+      <a href="/#proceso" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-[#F1F7E8] active:scale-98 transition-all">Metodología</a>
+      <a href="/#simulador" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-[#F1F7E8] flex items-center justify-between active:scale-98 transition-all">
+        <span>Simulador de Viabilidad</span>
+        <span class="text-[10px] bg-[#C6E79E] text-[#0E2A25] font-bold px-2 py-0.5 rounded-full">En Vivo</span>
+      </a>
+      <a href="/#precios" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-[#F1F7E8] active:scale-98 transition-all">Tarifas</a>
+      <a href="/#testimonios" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-[#F1F7E8] active:scale-98 transition-all">Casos de Éxito</a>
+      <a href="/#faq" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-[#F1F7E8] active:scale-98 transition-all">Preguntas Frecuentes</a>
+      
+      <!-- Auth Buttons & WhatsApp in Mobile Menu -->
+      <div class="pt-2 border-t border-[#E7EAE8] flex flex-col gap-2">
+        <div class="grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            class="auth-trigger-login text-center py-2.5 rounded-xl border border-[#E7EAE8] font-bold text-xs text-[#183A33] hover:bg-[#F1F7E8] active:scale-95 transition-all cursor-pointer"
+          >
+            Iniciar Sesión
+          </button>
+          <button
+            type="button"
+            class="auth-trigger-register text-center py-2.5 rounded-xl bg-[#183A33] text-[#C6E79E] font-bold text-xs hover:bg-[#0E2A25] active:scale-95 transition-all shadow-sm cursor-pointer"
+          >
+            Registrarse
+          </button>
+        </div>
+        <a
+          href="https://wa.me/573005734474"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full text-center py-2.5 rounded-full bg-[#C6E79E] text-[#0E2A25] font-bold text-xs block active:scale-95 transition-all shadow-sm"
+        >
+          WhatsApp (+57 300 573 4474)
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Auth Modal (Iniciar Sesión & Registrarse) -->
+<div
+  id="auth-modal"
+  class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="auth-modal-title"
+>
+  <div 
+    id="auth-modal-box"
+    class="relative w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 border border-[#E7EAE8] shadow-2xl transform scale-95 transition-transform duration-300"
+  >
+    <!-- Close button -->
+    <button
+      id="auth-modal-close"
+      type="button"
+      class="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#F9F9F9] hover:bg-[#E6F3D4] text-[#183A33] flex items-center justify-center text-sm font-bold transition-all hover:scale-110 active:scale-95 cursor-pointer"
+      aria-label="Cerrar modal"
+    >
+      ✕
+    </button>
+
+    <!-- Modal Header with Brand Logo -->
+    <div class="text-center mb-6">
+      <img
+        src="/logo-sin-huellas.png"
+        alt="Sin Huellas Logo"
+        class="h-9 w-auto mx-auto mb-3 object-contain"
+      />
+      <h3 id="auth-modal-title" class="text-xl font-bold text-[#10201C]">
+        Portal Jurídico de Clientes
+      </h3>
+      <p class="text-xs text-[#333333]/70 mt-1">
+        Consulta el estado de tu proceso procesal bajo estricto secreto profesional.
+      </p>
+    </div>
+
+    <!-- Segmented Tabs: Iniciar Sesión vs Registrarse -->
+    <div class="grid grid-cols-2 p-1 rounded-2xl bg-[#F1F7E8] mb-6">
+      <button
+        type="button"
+        id="tab-btn-login"
+        class="py-2 rounded-xl text-xs font-bold transition-all duration-200 bg-[#183A33] text-[#C6E79E] shadow-sm cursor-pointer"
+      >
+        Iniciar Sesión
+      </button>
+      <button
+        type="button"
+        id="tab-btn-register"
+        class="py-2 rounded-xl text-xs font-bold transition-all duration-200 text-[#183A33] hover:text-[#0E2A25] cursor-pointer"
+      >
+        Registrarse
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="auth-form-login" class="space-y-4">
+      <div>
+        <label for="login-id" class="block text-xs font-bold text-[#10201C] mb-1.5 uppercase tracking-wider">
+          Cédula de Ciudadanía *
+        </label>
+        <input
+          type="text"
+          id="login-id"
+          required
+          placeholder="Ej. 1020304050"
+          class="w-full px-4 py-3 rounded-xl border border-[#E7EAE8] focus:border-[#183A33] focus:ring-2 focus:ring-[#C6E79E]/40 outline-none text-sm bg-[#F9F9F9] text-[#10201C]"
+        />
+      </div>
+
+      <div>
+        <label for="login-password" class="block text-xs font-bold text-[#10201C] mb-1.5 uppercase tracking-wider">
+          Contraseña o PIN de Expediente *
+        </label>
+        <input
+          type="password"
+          id="login-password"
+          required
+          placeholder="••••••••"
+          class="w-full px-4 py-3 rounded-xl border border-[#E7EAE8] focus:border-[#183A33] focus:ring-2 focus:ring-[#C6E79E]/40 outline-none text-sm bg-[#F9F9F9] text-[#10201C]"
+        />
+      </div>
+
+      <div class="flex items-center justify-between text-xs pt-1">
+        <label class="flex items-center gap-2 cursor-pointer text-[#333333]">
+          <input type="checkbox" class="accent-[#183A33] rounded" />
+          <span>Recordar dispositivo</span>
+        </label>
+        <a
+          href="https://wa.me/573005734474?text=Hola%20Sin%20Huellas,%20requiero%20asistencia%20para%20recuperar%20mi%20clave%20de%20expediente"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[#183A33] font-bold hover:underline"
+        >
+          ¿Olvidaste tu clave?
+        </a>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full py-3.5 rounded-full bg-[#183A33] hover:bg-[#0E2A25] text-[#C6E79E] font-bold text-sm shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 cursor-pointer"
+      >
+        Entrar a Mi Expediente →
+      </button>
+
+      <p class="text-[11px] text-center text-[#333333]/70 pt-2">
+        Protección de datos conforme a la Ley 1581 de 2012 y Ley 1266 de Habeas Data.
+      </p>
+    </form>
+
+    <!-- Register Form (Hidden by default) -->
+    <form id="auth-form-register" class="space-y-3.5 hidden">
+      <div>
+        <label for="register-name" class="block text-xs font-bold text-[#10201C] mb-1 uppercase tracking-wider">
+          Nombre y Apellidos *
+        </label>
+        <input
+          type="text"
+          id="register-name"
+          required
+          placeholder="Ej. Carolina Pérez"
+          class="w-full px-4 py-2.5 rounded-xl border border-[#E7EAE8] focus:border-[#183A33] focus:ring-2 focus:ring-[#C6E79E]/40 outline-none text-sm bg-[#F9F9F9] text-[#10201C]"
+        />
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label for="register-id" class="block text-xs font-bold text-[#10201C] mb-1 uppercase tracking-wider">
+            Cédula *
+          </label>
+          <input
+            type="text"
+            id="register-id"
+            required
+            placeholder="No. Documento"
+            class="w-full px-4 py-2.5 rounded-xl border border-[#E7EAE8] focus:border-[#183A33] focus:ring-2 focus:ring-[#C6E79E]/40 outline-none text-sm bg-[#F9F9F9] text-[#10201C]"
+          />
+        </div>
+        <div>
+          <label for="register-phone" class="block text-xs font-bold text-[#10201C] mb-1 uppercase tracking-wider">
+            WhatsApp *
+          </label>
+          <input
+            type="tel"
+            id="register-phone"
+            required
+            placeholder="300 123 4567"
+            class="w-full px-4 py-2.5 rounded-xl border border-[#E7EAE8] focus:border-[#183A33] focus:ring-2 focus:ring-[#C6E79E]/40 outline-none text-sm bg-[#F9F9F9] text-[#10201C]"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="register-service" class="block text-xs font-bold text-[#10201C] mb-1 uppercase tracking-wider">
+          Servicio a Radicar *
+        </label>
+        <select
+          id="register-service"
+          required
+          class="w-full px-4 py-2.5 rounded-xl border border-[#E7EAE8] focus:border-[#183A33] focus:ring-2 focus:ring-[#C6E79E]/40 outline-none text-sm bg-[#F9F9F9] text-[#10201C]"
+        >
+          <option value="Eliminación de Reporte en Datacrédito">Eliminar Reporte Datacrédito / TransUnion</option>
+          <option value="Consultoría Completa $150.000">Consultoría + Dictamen Jurídico ($150.000)</option>
+          <option value="Negociación de Deudas">Negociación de Deudas con Quita</option>
+          <option value="Levantamiento de Embargo">Detener o Levantar Embargo</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full py-3.5 rounded-full bg-[#183A33] hover:bg-[#0E2A25] text-[#C6E79E] font-bold text-sm shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 cursor-pointer mt-1"
+      >
+        Crear Expediente y Enviar Solicitud →
+      </button>
+
+      <p class="text-[11px] text-center text-[#333333]/70 pt-1">
+        Un abogado titular se pondrá en contacto para autenticar tu identidad.
+      </p>
+    </form>
+  </div>
+</div>
+
+<style>
+  #mobile-menu:not(.hidden) {
+    animation: mobileMenuSlide 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes mobileMenuSlide {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Mobile Menu Logic
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (btn && menu && menuIcon && closeIcon) {
+    const toggleMenu = () => {
+      menu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // Cerrar al tocar fuera del menú en celular
+    document.addEventListener('click', (e) => {
+      if (!menu.classList.contains('hidden') && !menu.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+        menu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  }
+
+  // Auth Modal Logic (Iniciar Sesión / Registrarse)
+  const authModal = document.getElementById('auth-modal');
+  const authBox = document.getElementById('auth-modal-box');
+  const authClose = document.getElementById('auth-modal-close');
+  const tabLogin = document.getElementById('tab-btn-login');
+  const tabRegister = document.getElementById('tab-btn-register');
+  const formLogin = document.getElementById('auth-form-login');
+  const formRegister = document.getElementById('auth-form-register');
+
+  const openAuthModal = (mode: 'login' | 'register') => {
+    if (!authModal || !authBox) return;
+    
+    // Switch to selected tab
+    if (mode === 'login') {
+      showLoginTab();
+    } else {
+      showRegisterTab();
+    }
+
+    authModal.classList.remove('hidden');
+    // Animate in
+    requestAnimationFrame(() => {
+      authModal.classList.remove('opacity-0');
+      authModal.classList.add('opacity-100');
+      authBox.classList.remove('scale-95');
+      authBox.classList.add('scale-100');
+    });
+
+    // Close mobile menu if open
+    if (menu && !menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  };
+
+  const closeAuthModal = () => {
+    if (!authModal || !authBox) return;
+    authModal.classList.remove('opacity-100');
+    authModal.classList.add('opacity-0');
+    authBox.classList.remove('scale-100');
+    authBox.classList.add('scale-95');
+    setTimeout(() => {
+      authModal.classList.add('hidden');
+    }, 280);
+  };
+
+  const showLoginTab = () => {
+    if (!tabLogin || !tabRegister || !formLogin || !formRegister) return;
+    tabLogin.classList.add('bg-[#183A33]', 'text-[#C6E79E]', 'shadow-sm');
+    tabLogin.classList.remove('text-[#183A33]');
+    tabRegister.classList.remove('bg-[#183A33]', 'text-[#C6E79E]', 'shadow-sm');
+    tabRegister.classList.add('text-[#183A33]');
+    formLogin.classList.remove('hidden');
+    formRegister.classList.add('hidden');
+  };
+
+  const showRegisterTab = () => {
+    if (!tabLogin || !tabRegister || !formLogin || !formRegister) return;
+    tabRegister.classList.add('bg-[#183A33]', 'text-[#C6E79E]', 'shadow-sm');
+    tabRegister.classList.remove('text-[#183A33]');
+    tabLogin.classList.remove('bg-[#183A33]', 'text-[#C6E79E]', 'shadow-sm');
+    tabLogin.classList.add('text-[#183A33]');
+    formRegister.classList.remove('hidden');
+    formLogin.classList.add('hidden');
+  };
+
+  // Triggers
+  document.querySelectorAll('.auth-trigger-login').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openAuthModal('login');
+    });
+  });
+
+  document.querySelectorAll('.auth-trigger-register').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openAuthModal('register');
+    });
+  });
+
+  tabLogin?.addEventListener('click', showLoginTab);
+  tabRegister?.addEventListener('click', showRegisterTab);
+  authClose?.addEventListener('click', closeAuthModal);
+
+  // Close when clicking backdrop
+  authModal?.addEventListener('click', (e) => {
+    if (e.target === authModal) {
+      closeAuthModal();
+    }
+  });
+
+  // Close on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && authModal && !authModal.classList.contains('hidden')) {
+      closeAuthModal();
+    }
+  });
+
+  // Handle Login submission
+  formLogin?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const idInput = (document.getElementById('login-id') as HTMLInputElement)?.value;
+    const msg = encodeURIComponent(`Hola Sin Huellas, deseo ingresar al portal procesal con mi cédula ${idInput}. Por favor facilítenme el estado de mi expediente.`);
+    window.open(`https://wa.me/573005734474?text=${msg}`, '_blank');
+    closeAuthModal();
+  });
+
+  // Handle Register submission
+  formRegister?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = (document.getElementById('register-name') as HTMLInputElement)?.value;
+    const idNum = (document.getElementById('register-id') as HTMLInputElement)?.value;
+    const phone = (document.getElementById('register-phone') as HTMLInputElement)?.value;
+    const service = (document.getElementById('register-service') as HTMLSelectElement)?.value;
+    const msg = encodeURIComponent(`Hola Sin Huellas, solicito registrar una nueva cuenta y radicar mi caso.\n\n*Nombre:* ${name}\n*Cédula:* ${idNum}\n*Tel:* ${phone}\n*Trámite:* ${service}`);
+    window.open(`https://wa.me/573005734474?text=${msg}`, '_blank');
+    closeAuthModal();
+  });
+</script>

@@ -1,0 +1,28 @@
+---
+const items = [
+  "Eliminación de Reportes Negativos",
+  "Ley de Habeas Data 1266 y 2157",
+  "Negociación de Deudas hasta -70%",
+  "Defensa contra Embargos Judiciales",
+  "Datacrédito (Experian) al día",
+  "TransUnion (CIFIN) Restaurado",
+  "Consultoría Legal y Financiera",
+  "100% Legal y Seguro en Colombia",
+  "Protección del Salario y Mínimo Vital",
+  "Caducidad Legal a los 8 Años",
+];
+---
+
+<div class="relative py-3.5 bg-[#183A33] text-white overflow-hidden border-y border-[#22483F]">
+  <div class="flex select-none whitespace-nowrap animate-marquee">
+    {items.concat(items).map((text) => (
+      <div class="inline-flex items-center mx-5 gap-3 group cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#C6E79E]"></span>
+        <span class="text-xs sm:text-sm font-semibold tracking-wide text-white/95">
+          {text}
+        </span>
+        <span class="text-[#C6E79E]/60 text-xs">✦</span>
+      </div>
+    ))}
+  </div>
+</div>

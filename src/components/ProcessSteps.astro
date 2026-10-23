@@ -1,0 +1,73 @@
+---
+const steps = [
+  {
+    step: "Paso 1",
+    title: "Contacto & Diagnóstico",
+    desc: "Inicia con una llamada de asesoría de 15 minutos o una consultoría jurídica completa. Evaluamos tu cédula en bases oficiales sin costo inicial.",
+    duration: "Inmediato",
+  },
+  {
+    step: "Paso 2",
+    title: "Auditoría en 5 Centrales",
+    desc: "Revisamos Datacrédito Experian, TransUnion CIFIN, Rama Judicial, Garantías Mobiliarias y SIMIT para detectar irregularidades y caducidades.",
+    duration: "24 a 48 hrs",
+  },
+  {
+    step: "Paso 3",
+    title: "Radicación Jurídica",
+    desc: "Nuestros abogados redactan y radican derechos de petición formales, reclamos ante la SIC y tutelas bajo las Leyes 1266 y 2157.",
+    duration: "Término de Ley",
+  },
+  {
+    step: "Paso 4",
+    title: "Paz y Salvo & Libertad",
+    desc: "Recibes la actualización positiva de tu historial crediticio, levantamiento de medidas cautelares y tu certificado para volver a acceder a créditos.",
+    duration: "Éxito Garantizado",
+  },
+];
+---
+
+<section id="proceso" class="py-20 md:py-28 relative bg-[#F9F9F9] border-b border-[#E7EAE8]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header (Clean Assistantly Style) -->
+    <div class="text-center max-w-3xl mx-auto mb-14 reveal-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10201C] tracking-tight mb-4">
+        Un proceso <span class="text-[#183A33] underline decoration-[#C6E79E] decoration-4 underline-offset-4">simple, transparente</span> y 100% legal
+      </h2>
+      <p class="text-base text-[#333333] font-normal">
+        En solo 4 pasos comenzarás a resolver tus problemas de crédito con el respaldo de nuestros abogados expertos en Colombia.
+      </p>
+    </div>
+
+    <!-- Steps Grid (Clean, Connected, No disjointed icon headers) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      
+      {steps.map((s, idx) => (
+        <div class="assist-card p-7 relative flex flex-col justify-between group reveal-on-scroll transition-all duration-300 ease-out hover:scale-[1.06] hover:-translate-y-2.5 hover:shadow-2xl hover:border-[#183A33]/40 hover:z-10 cursor-pointer active:scale-95">
+          <div>
+            <!-- Clean Step Pill Badge (Replaces awkward 01 [icon] row) -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-block px-3 py-1 rounded-full text-[11px] num-assist font-bold bg-[#E6F3D4] text-[#183A33] transition-all duration-300 group-hover:bg-[#C6E79E] group-hover:scale-105">
+                {s.step}
+              </span>
+              <span class="text-[10px] num-assist font-medium text-[#333333]/60 transition-colors duration-300 group-hover:text-[#183A33]">
+                {s.duration}
+              </span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="text-lg font-bold text-[#10201C] mb-2.5 group-hover:text-[#183A33] transition-colors">
+              {s.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-[#333333] leading-relaxed font-normal">
+              {s.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>

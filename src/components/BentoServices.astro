@@ -1,0 +1,146 @@
+---
+const services = [
+  {
+    id: "reportes",
+    badge: "Servicio Principal",
+    title: "Eliminación Legal de Reportes Negativos",
+    subtitle: "Datacrédito (Experian) y TransUnion (CIFIN)",
+    desc: "Exigimos el retiro formal y definitivo de historiales desfavorables por falta de notificación previa (omisión del plazo legal de 20 días), suplantación de identidad o caducidad legal a los 8 años de mora bajo las Leyes 1266 de 2008 y 2157 de 2021.",
+    highlights: ["Caducidad a los 8 años de mora", "Eliminación por falta de comunicación previa", "Revisión de paz y salvos no reportados", "Derechos de petición y acciones de tutela"],
+    icon: "shield-check",
+    colSpan: "lg:col-span-7",
+  },
+  {
+    id: "deudas",
+    badge: "Defensa Patrimonial",
+    title: "Negociación Estratégica de Pasivos",
+    subtitle: "Bancos, Cooperativas y Casas de Cobranza",
+    desc: "Negociamos directamente con las áreas jurídicas de tus acreedores para acordar pagos viables con quitas de hasta el 70% sobre saldos pendientes, asegurando tu paz y salvo formal.",
+    highlights: ["Cese de llamadas y acoso extrajudicial", "Quitas reales del 40% al 70%", "Acuerdos protocolizados con fuerza de ley"],
+    icon: "handshake",
+    colSpan: "lg:col-span-5",
+  },
+  {
+    id: "embargos",
+    badge: "Defensa Procesal",
+    title: "Levantamiento de Embargos Judiciales",
+    subtitle: "Salarios, Cuentas de Ahorros y Bienes",
+    desc: "Intervenimos ante despachos judiciales para revocar embargos que atenten contra el mínimo vital garantizado por la Constitución sobre salarios y cuentas de ahorro inembargables.",
+    highlights: ["Protección del salario mínimo legal", "Desbloqueo de cuentas inembargables", "Excepciones de mérito y prescripción"],
+    icon: "gavel",
+    colSpan: "lg:col-span-5",
+  },
+  {
+    id: "diagnostico",
+    badge: "Auditoría Forense 360°",
+    title: "Dictamen Jurídico y Financiero Integral",
+    subtitle: "Cotejo Multifuente en 5 Centrales y Despachos",
+    desc: "Inspección técnica simultánea de tu situación en Datacrédito Experian, TransUnion CIFIN, Rama Judicial (demandas civiles activas), Garantías Mobiliarias y SIMIT con dictamen por escrito.",
+    highlights: ["Dictamen por escrito con firma profesional", "Hoja de ruta procesal personalizada", "Identificación técnica de fraudes", "Sesión de 60 minutos con abogado titular"],
+    icon: "file-search",
+    colSpan: "lg:col-span-7",
+  },
+];
+---
+
+<section id="servicios" class="py-20 md:py-28 relative bg-white border-b border-[#E7EAE8]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header (Assistantly Style) -->
+    <div class="text-center max-w-3xl mx-auto mb-14 reveal-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10201C] tracking-tight mb-4">
+        Soluciones diseñadas para <br class="hidden sm:inline"/>
+        <span class="text-[#183A33] underline decoration-[#C6E79E] decoration-4 underline-offset-4">
+          devolverle la vida
+        </span>
+        a tus finanzas
+      </h2>
+      <p class="text-base text-[#333333] font-normal">
+        Cada caso es único. Analizamos tus derechos constitucionales de Habeas Data para aplicar la estrategia legal exacta que te permita volver a tener crédito y tranquilidad.
+      </p>
+    </div>
+
+    <!-- Bento Grid Container (Clean Flat Cards with Subtle Interactive Zoom on Hover) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      {services.map((s) => (
+        <div class={`${s.colSpan} assist-card bg-white rounded-2xl border border-[#E7EAE8] hover:border-[#183A33]/50 p-7 sm:p-8 flex flex-col justify-between group reveal-on-scroll transition-all duration-300 ease-out hover:scale-[1.025] hover:-translate-y-1.5 hover:shadow-xl cursor-pointer`}>
+          <div>
+            <!-- Badge & Icon -->
+            <div class="flex items-center justify-between gap-4 mb-5 pb-3 border-b border-[#E7EAE8]">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] num-assist font-bold bg-[#E6F3D4] text-[#183A33]">
+                {s.badge}
+              </span>
+              <div class="w-9 h-9 rounded-xl bg-[#F1F7E8] text-[#183A33] flex items-center justify-center font-bold text-xs group-hover:bg-[#C6E79E] transition-colors duration-200">
+                {s.icon === "shield-check" && (
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )}
+                {s.icon === "handshake" && (
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                )}
+                {s.icon === "gavel" && (
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                )}
+                {s.icon === "file-search" && (
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                )}
+              </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-xl sm:text-2xl font-bold text-[#10201C] mb-1 group-hover:text-[#183A33] transition-colors">
+              {s.title}
+            </h3>
+            {s.subtitle && (
+              <p class="text-xs font-semibold text-[#183A33]/80 mb-3">
+                {s.subtitle}
+              </p>
+            )}
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-[#333333] leading-relaxed mb-5 font-normal">
+              {s.desc}
+            </p>
+
+            <!-- Bullet points with clean green checks -->
+            <ul class="space-y-2 mb-6">
+              {s.highlights.map(item => (
+                <li class="flex items-start gap-2 text-xs text-[#333333]">
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#E6F3D4] text-[#183A33] flex items-center justify-center flex-shrink-0 mt-0.5 text-[9px] font-bold">
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Bottom Action -->
+          <div class="pt-3.5 border-t border-[#E7EAE8] flex items-center justify-between">
+            <a
+              href={"https://wa.me/573005734474?text=Hola,%20solicito%20asesor%C3%ADa%20sobre:%20" + encodeURIComponent(s.title)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-[#183A33] hover:underline"
+            >
+              <span>Consultar este Asunto</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <span class="text-[10px] num-assist text-[#333333]/60 font-medium">Cobertura Nacional</span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

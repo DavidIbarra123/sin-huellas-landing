@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import MarqueeTicker from '../components/MarqueeTicker.astro';
+import BentoServices from '../components/BentoServices.astro';
+import WhyTrustCards from '../components/WhyTrustCards.astro';
+import CreditViabilityCalculator from '../components/CreditViabilityCalculator.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import WhySinHuellas from '../components/WhySinHuellas.astro';
+import PricingSection from '../components/PricingSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<BaseLayout
+  title="Sin Huellas | Expertos en Eliminar Reportes de Datacrédito y Deudas en Colombia"
+  description="Sin Huellas: Soluciones legales en Colombia para salir de Datacrédito y TransUnion, negociar deudas con hasta 70% de descuento y detener embargos. 100% legal bajo la Ley de Habeas Data."
+  canonical="https://www.sinhuellas.co/"
+>
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Animated Monos-style Marquee Ticker -->
+  <MarqueeTicker />
+
+  <!-- Services Bento Grid -->
+  <BentoServices />
+
+  <!-- Monos-style Sticky Stacking Cards: ¿Por qué confiar en nosotros? -->
+  <WhyTrustCards />
+
+  <!-- Interactive Credit Viability Simulator -->
+  <CreditViabilityCalculator />
+
+  <!-- 4-Step Process -->
+  <ProcessSteps />
+
+  <!-- Why Sin Huellas Comparison Table -->
+  <WhySinHuellas />
+
+  <!-- Pricing & Packages -->
+  <PricingSection />
+
+  <!-- Verified Testimonials & Results -->
+  <Testimonials />
+
+  <!-- SEO & AI FAQ Accordion -->
+  <FAQ />
+
+  <!-- Contact & Booking Section -->
+  <ContactSection />
+</BaseLayout>

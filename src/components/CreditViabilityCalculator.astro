@@ -1,0 +1,288 @@
+---
+---
+
+<section id="simulador" class="py-20 md:py-28 bg-[#F9F9F9] relative overflow-hidden border-b border-[#E7EAE8]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Title (Clean Assistantly Style) -->
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10201C] tracking-tight mb-4">
+        Simulador de <span class="text-[#183A33] underline decoration-[#C6E79E] decoration-4 underline-offset-4">viabilidad procesal</span>
+      </h2>
+      <p class="text-base sm:text-lg text-[#333333]/80 leading-relaxed font-normal">
+        Descubre en menos de 1 minuto si tu reporte en centrales de riesgo o proceso de embargo puede ser eliminado bajo las leyes colombianas de Habeas Data.
+      </p>
+    </div>
+
+    <!-- Simulator Interactive Box -->
+    <div class="rounded-2xl p-6 sm:p-10 bg-white shadow-sm border border-[#E7EAE8] reveal-on-scroll">
+      
+      <form id="viability-form" class="space-y-8">
+        
+        <!-- Step 1: Issue Type -->
+        <div>
+          <label class="block text-sm sm:text-base font-bold text-[#10201C] mb-3">
+            1. ¿Cuál es tu situación financiera principal hoy?
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            
+            <label class="sim-card flex items-center gap-3 p-4 rounded-xl cursor-pointer">
+              <input type="radio" name="issue" value="reporte" checked class="accent-[#C6E79E] w-4 h-4 cursor-pointer" />
+              <div>
+                <span class="block text-xs sm:text-sm font-bold">Reporte Negativo</span>
+                <span class="sim-subtitle text-[11px] text-[#333333]/70">Datacrédito o TransUnion</span>
+              </div>
+            </label>
+
+            <label class="sim-card flex items-center gap-3 p-4 rounded-xl cursor-pointer">
+              <input type="radio" name="issue" value="embargo" class="accent-[#C6E79E] w-4 h-4 cursor-pointer" />
+              <div>
+                <span class="block text-xs sm:text-sm font-bold">Embargo Judicial</span>
+                <span class="sim-subtitle text-[11px] text-[#333333]/70">Cuentas o sueldo retenido</span>
+              </div>
+            </label>
+
+            <label class="sim-card flex items-center gap-3 p-4 rounded-xl cursor-pointer">
+              <input type="radio" name="issue" value="deuda" class="accent-[#C6E79E] w-4 h-4 cursor-pointer" />
+              <div>
+                <span class="block text-xs sm:text-sm font-bold">Cobro de Deuda</span>
+                <span class="sim-subtitle text-[11px] text-[#333333]/70">Cobranza insistente</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Step 2: Time in Mora -->
+        <div>
+          <label class="block text-sm sm:text-base font-bold text-[#10201C] mb-3">
+            2. ¿Cuánto tiempo lleva esta obligación o reporte?
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+            
+            <label class="sim-card p-3.5 text-center rounded-xl cursor-pointer flex items-center justify-center">
+              <input type="radio" name="time" value="less2" class="sr-only" />
+              <span class="block text-xs sm:text-sm font-bold">Menos de 2 años</span>
+            </label>
+
+            <label class="sim-card p-3.5 text-center rounded-xl cursor-pointer flex items-center justify-center">
+              <input type="radio" name="time" value="2to5" class="sr-only" />
+              <span class="block text-xs sm:text-sm font-bold">Entre 2 y 5 años</span>
+            </label>
+
+            <label class="sim-card p-3.5 text-center rounded-xl cursor-pointer flex items-center justify-center">
+              <input type="radio" name="time" value="5to8" checked class="sr-only" />
+              <span class="block text-xs sm:text-sm font-bold">Entre 5 y 8 años</span>
+            </label>
+
+            <label class="sim-card p-3.5 text-center rounded-xl cursor-pointer flex items-center justify-center">
+              <input type="radio" name="time" value="more8" class="sr-only" />
+              <span class="block text-xs sm:text-sm font-bold">Más de 8 años</span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Step 3: Notification Check -->
+        <div>
+          <label class="block text-sm sm:text-base font-bold text-[#10201C] mb-3">
+            3. ¿La entidad te notificó por escrito 20 días calendario ANTES de reportarte?
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            
+            <label class="sim-card p-3.5 rounded-xl cursor-pointer flex items-center gap-3">
+              <input type="radio" name="notice" value="no" checked class="accent-[#C6E79E] w-4 h-4 cursor-pointer" />
+              <span class="text-xs sm:text-sm font-bold">No me notificaron</span>
+            </label>
+
+            <label class="sim-card p-3.5 rounded-xl cursor-pointer flex items-center gap-3">
+              <input type="radio" name="notice" value="unknown" class="accent-[#C6E79E] w-4 h-4 cursor-pointer" />
+              <span class="text-xs sm:text-sm font-bold">No estoy seguro(a)</span>
+            </label>
+
+            <label class="sim-card p-3.5 rounded-xl cursor-pointer flex items-center gap-3">
+              <input type="radio" name="notice" value="yes" class="accent-[#C6E79E] w-4 h-4 cursor-pointer" />
+              <span class="text-xs sm:text-sm font-bold">Sí me notificaron</span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Submit Button: Matching exact colors from selected cards (#183A33 background and #C6E79E text) -->
+        <div class="text-center pt-4">
+          <button
+            type="button"
+            id="calculate-btn"
+            class="group inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full text-base sm:text-lg font-bold text-[#C6E79E] bg-[#183A33] border-2 border-[#183A33] hover:border-[#C6E79E] hover:bg-[#0E2A25] shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 w-full sm:w-auto cursor-pointer"
+          >
+            <span class="text-[#C6E79E] font-extrabold tracking-wide">Iniciar Trámite</span>
+            <span class="text-[#C6E79E] text-xl font-bold transition-transform duration-300 group-hover:translate-x-1.5 leading-none">→</span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Results Display (Dynamic) -->
+      <div id="result-box" class="mt-8 pt-8 border-t border-[#E7EAE8] hidden">
+        <div class="p-6 sm:p-7 rounded-2xl bg-[#F9F9F9] border border-[#E7EAE8] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-2">
+              <span id="viability-badge" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-[#183A33] text-[#C6E79E]">
+                Viabilidad 95% - Muy Alta
+              </span>
+              <span class="text-xs font-bold text-[#183A33]">Leyes 1266 y 2157</span>
+            </div>
+            <h4 id="viability-title" class="text-lg sm:text-xl font-bold text-[#10201C]">
+              Tu caso cuenta con sólidos fundamentos jurídicos para eliminación.
+            </h4>
+            <p id="viability-desc" class="text-xs sm:text-sm text-[#333333] max-w-2xl leading-relaxed font-normal">
+              La falta de notificación previa o la superación de los periodos de caducidad legal facultan a los abogados de Sin Huellas a radicar un derecho de petición y exigir la supresión del dato negativo.
+            </p>
+          </div>
+
+          <a
+            id="whatsapp-result-link"
+            href="https://wa.me/573005734474?text=Hola%20Sin%20Huellas,%20acabo%20de%20usar%20el%20simulador%20en%20la%20web%20y%20quiero%20iniciar%20mi%20proceso"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold text-[#0E2A25] bg-[#C6E79E] hover:bg-[#B2D988] hover:scale-105 active:scale-95 shadow-sm hover:shadow-md transition-all duration-300"
+          >
+            <span>Iniciar Trámite por WhatsApp</span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Simulator Options: Estado Inactivo vs Activo Verde de la Paleta */
+  .sim-card {
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #FFFFFF;
+    border: 1.5px solid #E7EAE8;
+    color: #10201C;
+    user-select: none;
+  }
+
+  .sim-card:hover {
+    border-color: #183A33;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px -2px rgba(24, 58, 51, 0.08);
+  }
+
+  /* Estado Seleccionado Verde de la Paleta (Pine #183A33 y Letras #C6E79E exactas de Imagen 2) */
+  .sim-card.is-selected {
+    background-color: #183A33 !important;
+    border-color: #183A33 !important;
+    color: #C6E79E !important;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 24px -6px rgba(24, 58, 51, 0.35);
+  }
+
+  .sim-card.is-selected span,
+  .sim-card.is-selected p,
+  .sim-card.is-selected div {
+    color: #C6E79E !important;
+  }
+
+  .sim-card.is-selected .sim-subtitle {
+    color: #C6E79E !important;
+    opacity: 0.85;
+  }
+</style>
+
+<script>
+  // Dynamic Green Selection State on Click
+  const form = document.getElementById('viability-form');
+  const simCards = document.querySelectorAll('.sim-card');
+
+  const updateCardSelection = () => {
+    simCards.forEach(card => {
+      const radio = card.querySelector('input[type="radio"]') as HTMLInputElement;
+      if (radio && radio.checked) {
+        card.classList.add('is-selected');
+      } else {
+        card.classList.remove('is-selected');
+      }
+    });
+  };
+
+  // Run on mount
+  updateCardSelection();
+
+  // Listen to clicks / changes
+  if (form) {
+    form.addEventListener('change', () => {
+      updateCardSelection();
+    });
+  }
+
+  simCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const radio = card.querySelector('input[type="radio"]') as HTMLInputElement;
+      if (radio) {
+        radio.checked = true;
+        updateCardSelection();
+      }
+    });
+  });
+
+  // Calculate Button & Result Display
+  const calcBtn = document.getElementById('calculate-btn');
+  const resultBox = document.getElementById('result-box');
+  const badge = document.getElementById('viability-badge');
+  const title = document.getElementById('viability-title');
+  const desc = document.getElementById('viability-desc');
+  const waLink = document.getElementById('whatsapp-result-link');
+
+  if (calcBtn && resultBox && badge && title && desc && waLink) {
+    calcBtn.addEventListener('click', () => {
+      const issue = (document.querySelector('input[name="issue"]:checked') as HTMLInputElement)?.value;
+      const time = (document.querySelector('input[name="time"]:checked') as HTMLInputElement)?.value;
+      const notice = (document.querySelector('input[name="notice"]:checked') as HTMLInputElement)?.value;
+
+      resultBox.classList.remove('hidden');
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      let percent = "90%";
+      let viabilityText = "Viabilidad Muy Alta";
+      let titleText = "Tu caso cuenta con sólidos fundamentos jurídicos para eliminación.";
+      let descText = "Cumples con causales de eliminación directa por ley de Habeas Data.";
+
+      if (time === 'more8') {
+        percent = "98%";
+        viabilityText = "Viabilidad 98% - Caducidad Legal Obligatoria";
+        titleText = "Tu reporte superó los 8 años de mora y debe ser borrado por ley.";
+        descText = "Bajo la Ley 1266 y la sentencia C-282/21 de la Corte Constitucional, opera la caducidad obligatoria. Las centrales deben eliminar el reporte sin exigir el pago previo.";
+      } else if (notice === 'no') {
+        percent = "95%";
+        viabilityText = "Viabilidad 95% - Vicio de Notificación";
+        titleText = "Falta de comunicación previa obligatoria de 20 días calendario.";
+        descText = "Si la entidad no te notificó por escrito 20 días antes de reportarte, violó el debido proceso y el reporte es ilegal. Procede derecho de petición inmediato.";
+      } else if (issue === 'embargo') {
+        percent = "92%";
+        viabilityText = "Viabilidad 92% - Protección del Mínimo Vital";
+        titleText = "Procede levantamiento o reducción de medida cautelar.";
+        descText = "El salario mínimo legal y los montos protegidos en cuentas de ahorros son inembargables según la Superintendencia Financiera. Intervenimos ante el juzgado.";
+      } else if (issue === 'deuda') {
+        percent = "88%";
+        viabilityText = "Viabilidad 88% - Negociación con Quita";
+        titleText = "Apto para negociación directa con descuento de hasta el 70%.";
+        descText = "Negociamos con la casa de cobranza o entidad bancaria para finiquitar la obligación por una fracción del capital y obtener paz y salvo formal definitivo.";
+      }
+
+      badge.textContent = viabilityText;
+      title.textContent = titleText;
+      desc.textContent = descText;
+
+      const waMsg = `Hola Sin Huellas, acabo de evaluar mi caso en el simulador: ${titleText} (Situación: ${issue}, Tiempo: ${time}, Notificado: ${notice}). Deseo iniciar mi trámite con un abogado.`;
+      waLink.setAttribute('href', `https://wa.me/573005734474?text=${encodeURIComponent(waMsg)}`);
+    });
+  }
+</script>

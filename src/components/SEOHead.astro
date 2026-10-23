@@ -1,0 +1,211 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = "Sin Huellas | Expertos en Eliminar Reportes de Datacrédito y Solución de Deudas en Colombia",
+  description = "Sin Huellas Colombia: asesoría jurídica experta para eliminar reportes negativos en Datacrédito y TransUnion, detener embargos y negociar deudas con hasta 70% de descuento. ¡Recupera tu tranquilidad y vida crediticia hoy!",
+  canonical = "https://www.sinhuellas.co/",
+  image = "https://www.sinhuellas.co/og-image.jpg",
+  type = "website",
+} = Astro.props;
+
+// Schema.org Structured Data
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "@id": "https://www.sinhuellas.co/#organization",
+    "name": "Sin Huellas",
+    "alternateName": ["Sin Huellas Colombia", "SinHuellas", "SinHuellas.co", "Sin Huellas Soluciones Legales", "Sin Huellas Abogados"],
+    "url": "https://www.sinhuellas.co",
+    "logo": "https://www.sinhuellas.co/logo-sin-huellas.png",
+    "image": image,
+    "description": description,
+    "telephone": "+57-300-573-4474",
+    "email": "gerencia@sinhuellas.co",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Bogotá D.C.",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.7110,
+      "longitude": -74.0721
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61594857801635",
+      "https://www.instagram.com/sinhuellas07/",
+      "https://www.tiktok.com/@sinhuellas07",
+      "https://wa.me/573005734474"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "487",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Recuperación Crediticia y Soluciones Legales",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Eliminación de Reportes Negativos en Datacrédito y TransUnion",
+            "description": "Retiro legal de reportes negativos por caducidad (8 años), pago previo o falta de notificación obligatoria de 20 días."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Negociación de Deudas con Descuento",
+            "description": "Acuerdos directos con entidades bancarias y casas de cobranza para pagar solo una fracción del capital."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Defensa Jurídica ante Embargos de Salarios y Cuentas",
+            "description": "Protección judicial del mínimo vital y levantamiento inmediato de medidas cautelares abusivas."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Consultoría Completa + Diagnóstico Jurídico Integral",
+            "price": "150000",
+            "priceCurrency": "COP",
+            "description": "60 minutos con revisión en Datacrédito, TransUnion, Rama Judicial, Garantías Mobiliarias y SIMIT con informe por escrito."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.sinhuellas.co/#website",
+    "url": "https://www.sinhuellas.co",
+    "name": "Sin Huellas",
+    "publisher": {
+      "@id": "https://www.sinhuellas.co/#organization"
+    },
+    "inLanguage": "es-CO"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es legal borrar los reportes negativos en Datacrédito con Sin Huellas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Sin Huellas actúa 100% bajo la Ley de Habeas Data (Ley 1266 de 2008 y Ley 2157 de 2021). Si una entidad financiera o comercial no envió la comunicación previa obligatoria de 20 días, si la deuda ya caducó por haber superado los 8 años de mora, o si existe suplantación, la ley exige la eliminación inmediata y definitiva del reporte negativo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda el proceso para eliminar un reporte negativo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Por mandato de la ley colombiana, las entidades y las centrales de riesgo cuentan con un plazo legal de 15 días hábiles para responder a los derechos de petición formulados por nuestro equipo jurídico. En la mayoría de los casos, la rectificación y actualización del historial toma entre 15 y 30 días."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo detiene Sin Huellas un embargo sobre mi salario o cuenta bancaria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nuestros abogados especialistas en derecho procesal revisan de inmediato el expediente en la Rama Judicial e interponen incidentes procesales para proteger los montos inembargables de cuentas de ahorro fijados por la Superintendencia Financiera y el salario mínimo legal, gestionando el desembargo en tiempo récord."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye la Consultoría Completa de $150.000 COP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Incluye 60 minutos con un abogado especialista, revisión en tiempo real de Datacrédito Experian, TransUnion CIFIN, Rama Judicial, Garantías Mobiliarias y SIMIT, junto con un informe jurídico por escrito y el plan estratégico detallado para recuperar tu vida crediticia."
+        }
+      }
+    ]
+  }
+];
+---
+
+<!-- Meta Básicos -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="author" content="Sin Huellas Colombia" />
+<meta name="publisher" content="Sin Huellas" />
+<meta name="keywords" content="sin huellas, sin huellas colombia, sinhuellas, salir de datacredito, eliminar reportes datacredito, abogados datacredito, borrar reportes centrales de riesgo, ley de borron y cuenta nueva, prescripcion deudas colombia, desembargar salario colombia, transunion colombia, historial crediticio limpio, asesoría legal financiera" />
+
+<!-- Geo-localización para posicionamiento en Colombia -->
+<meta name="geo.region" content="CO-DC" />
+<meta name="geo.placename" content="Bogotá" />
+<meta name="geo.position" content="4.7110;-74.0721" />
+<meta name="ICBM" content="4.7110, -74.0721" />
+<meta name="language" content="Spanish" />
+
+<!-- Open Graph / Redes Sociales -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="Sin Huellas" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:locale" content="es_CO" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@sinhuellasco" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<!-- Favicons & Mobile theme (Icono oficial de Sin Huellas con transparencia) -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+<meta name="theme-color" content="#163f30" />
+<meta name="apple-mobile-web-app-status-bar-style" content="#163f30" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- Standard AI and LLMs Reference -->
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Contexto para Modelos de Inteligencia Artificial" />
+
+<!-- JSON-LD Datos Estructurados para Google, Bing y Motores IA -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
